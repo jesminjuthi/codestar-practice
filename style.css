@@ -1,0 +1,61 @@
+/* 
+Theme Name: Code Star
+Author: Jesmin Juthi
+Author URI: https://juthijesmin.com
+Text Domain: codestar
+*/
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Oswald';
+    font-weight: normal;
+}
+
+.logo img{
+    width: 8%;
+}
+
+h1{
+    font-size: 32px;
+}
+
+.heading1{
+    padding: 15px 0;
+    text-align: center;
+}
+.para {
+    width: 70%;
+    margin: 20px auto;
+    font-weight: 300;
+    letter-spacing: .5px;
+    line-height: 1.5;
+}
+
+.share-btn ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+    padding-left: 0px;
+}
+
+.share-btn ul li{
+    margin: 10px;
+}
+
+footer {
+    background-color: black;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 30px;
+}
+
+footer p{
+    color: #fff;
+    margin-bottom: 0;
+}
