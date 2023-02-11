@@ -18,6 +18,7 @@ function codestar_enqueue_scripts() {
     wp_enqueue_style('codestar-bootstrap-css', '//cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css');
     wp_enqueue_style('codestar-icons', '//cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css');
     wp_enqueue_style('codestar-stylesheet', get_stylesheet_uri());
+    wp_enqueue_style('reponsive-css', get_template_directory_uri() . '/responsive.css', array(), '1.0', 'all');
     wp_enqueue_script('codestar-bootstrap-js', '//cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js');
 }
 

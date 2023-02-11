@@ -182,6 +182,74 @@ if( class_exists( 'CSF' ) ) {
       ]
     ));
 
+    CSF::createSection($options, array(
+      'title' => 'Team Section',
+      'id'    => 'team',
+      'fields'  => [
+        [
+          'title' => 'Team Section Title',
+          'id'    => 'team_sec_title',
+          'type'  => 'text'
+        ],
+        [
+          'title' => 'Team Section Subtitle',
+          'id'    => 'team_sub',
+          'type'  => 'textarea'
+        ],
+        [
+          'title' => 'Team Section Background',
+          'id'    => 'team-bg',
+          'type'  => 'background',
+          'output'  => '.outer-container'
+        ],
+        [
+          'title' => 'Add Team Member',
+          'id'    => 'team_member',
+          'type'  => 'group',
+          'fields'  => [
+            [
+              'id'  => 'team_name',
+              'title' => 'Name',
+              'type'  => 'text'
+            ],
+            [
+              'id'  => 'team_desc',
+              'title' => 'Designation',
+              'type'  => 'text'
+            ],
+            [
+              'id'  => 'team_img',
+              'title' => 'Profile Picture',
+              'type'  => 'media'
+            ],
+            [
+              'id'  => 'social_icons',
+              'title' => 'Social Icons',
+              'type'  => 'group',
+              'fields'  => [
+                [
+                  'id'  => 'team_social_text',
+                  'title' => 'Media Name',
+                  'type'  => 'text'
+                ],
+                [
+                  'id'  => 'team_social_icon',
+                  'title' => 'Select Icon',
+                  'type'  => 'icon'
+                ],
+                [
+                  'id'  => 'sl',
+                  'title' => 'Insert Link',
+                  'type'  => 'text',
+                  'default' => '#'
+                ],
+              ]
+            ]
+          ]
+        ]
+      ]
+    ));
+
 
 
   
