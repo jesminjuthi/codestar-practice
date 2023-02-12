@@ -250,10 +250,72 @@ if( class_exists( 'CSF' ) ) {
       ]
     ));
 
+    CSF::createSection($options, array( 
+      'title' => 'All Products',
+      'id'    => 'products_select',
+      'fields'  => [
+        [
+          'title' => 'All Products',
+          'id'    => 'product_items',
+          'type'  => 'select',
+          'placeholder' => 'Select a product',
+          'options' => get_products_array(),
+        ]
+      ]
+    ));
+
+  
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
   
   }
+
+  function get_products_array() {
+    $args = array(
+      'post_type' => 'product',
+      'posts_per_page' => -1,
+    );
+    $products = get_posts( $args );
+    $product_array = array();
+    foreach ( $products as $product ) {
+      $product_array[ $product->ID ] = $product->post_title;
+    }
+    return $product_array;
+  }
+
+
+
+
+
+
+
+
+
+
+
 
 
 

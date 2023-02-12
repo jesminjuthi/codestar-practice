@@ -1,54 +1,44 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <?php
-  wp_head();
-  ?>
-</head>
-
-<body>
+<?php 
+  get_header();
+?>
   <div class="logo text-center">
     <?php
-    $logo = codestar_get_option('logo');
+      $logo = codestar_get_option('logo');
     ?>
     <img src="<?php echo $logo['url']; ?>" alt="<?php echo $logo['alt']; ?>">
   </div>
   <h1 class="heading1" style="background-color: <?php echo codestar_get_option('bg-color') ?>; color:<?php echo codestar_get_option('color') ?>;">
     <?php
-    echo codestar_get_option('text');
+      echo codestar_get_option('text');
     ?>
   </h1>
 
   <p class="para">
     <?php
-    echo codestar_get_option('textarea');
+      echo codestar_get_option('textarea');
     ?>
   </p>
 
   <?php
-  if (codestar_get_option('btn-hs') == true) :
+    if (codestar_get_option('btn-hs') == true) :
   ?>
     <button class="btn-1 btn btn-primary py-2 px-5 m-auto d-block">
       <?php
-      echo codestar_get_option('btn-label');
+        echo codestar_get_option('btn-label');
       ?>
     </button>
   <?php
-  endif;
+    endif;
   ?>
 
   <?php
-  if (codestar_get_option('hs_share_btn') == true) :
+    if (codestar_get_option('hs_share_btn') == true) :
   ?>
     <div class="share-btn">
       <ul>
         <?php
         $share_options = codestar_get_option('share-btn-grp');
-        foreach ($share_options as $share_option) :
+          foreach ($share_options as $share_option) :
         ?>
           <li>
             <a href="<?php echo $share_option['social_link']; ?>" style="color: <?php echo codestar_get_option('social_icon_color'); ?>">
@@ -56,13 +46,13 @@
             </a>
           </li>
         <?php
-        endforeach;
+          endforeach;
         ?>
       </ul>
     </div>
 
   <?php
-  endif;
+    endif;
   ?>
 
   <!-- team section -->
@@ -74,12 +64,12 @@
     <div class="responsive-container-block inner-container">
       <p class="text-blk section-head-text">
         <?php
-        echo $team_sec_title;
+          echo $team_sec_title;
         ?>
       </p>
       <p class="text-blk section-subhead-text">
         <?php
-        echo $team_sec_subtitle;
+          echo $team_sec_subtitle;
         ?>
       </p>
       <div class="responsive-container-block">
@@ -95,12 +85,12 @@
               </div>
               <p class="text-blk name">
                 <?php
-                echo $team_member['team_name'];
+                  echo $team_member['team_name'];
                 ?>
               </p>
               <p class="text-blk position">
                 <?php
-                echo $team_member['team_desc'];
+                  echo $team_member['team_desc'];
                 ?>
               </p>
               <div class="social-media-links">
@@ -123,18 +113,20 @@
     </div>
   </div>
 
-  <footer>
-    <p>
-      <?php
-      echo codestar_get_option('copyright');
-      ?>
-    </p>
-  </footer>
+  <?php 
+    $selectedProductID = codestar_get_option('product_items');
 
+    var_dump($selectedProductID);
 
-  <?php
-  wp_footer();
+    $addToCartLink = add_query_arg('add-to-cart', $selectedProductID, site_url('/cart/'));
+  
   ?>
-</body>
 
-</html>
+  <div class="product-btn my-5 text-center">
+    <a href="<?php echo $addToCartLink; ?>" class="btn btn-success btn-lg text-uppercase">Add to cart</a>
+  </div>
+
+
+  <?php 
+    get_footer();
+  ?>
